@@ -1,0 +1,30 @@
+<template>
+  <guest-layout>
+    <section class="flex md:flex-row m-2 p-2">
+      <div class="w-full">
+        <PostCard
+          v-for="post in posts.data"
+          :post="post"
+          :community="post.community_slug"
+          :key="post.id"
+        />
+      </div>
+      <div class="w-full md:w-4/12 hidden md:block">
+        <CommunityList :communities="communities.data">
+          <template #title>Top communities</template></CommunityList>
+      </div>
+    </section>
+  </guest-layout>
+</template>
+
+<script setup>
+import GuestLayout from "@/Layouts/Guest.vue";
+import PostCard from "@/Components/PostCard.vue";
+import Pagination from "@/Components/Pagination.vue";
+import CommunityList from "@/Components/CommunityList.vue";
+
+defineProps({
+  communities: Object,
+  posts: Object,
+});
+</script>
