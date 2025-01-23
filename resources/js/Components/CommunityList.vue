@@ -17,13 +17,13 @@
               dark:text-slate-400
               font-semibold
               truncate
-              text-sm
+              text-xs  <!-- Ubah dari text-sm ke text-xs -->
               hover:text-indigo-700
             "
           >
             {{ community.name }}
           </Link>
-          <div>Posts({{ community.posts_count }})</div>
+          <div class="text-xs">Posts({{ community.posts_count }})</div> <!-- Ubah ukuran teks di sini juga -->
         </div>
       </li>
     </ul>
