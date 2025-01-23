@@ -14,7 +14,7 @@
       </div>
     </template>
 
-    <section class="flex md:flex-row m-2 p-2">
+    <section class="flex md:flex-row ml-40 p-2">
       <div class="w-8/12">
         <PostCard
           v-for="post in posts.data"
@@ -22,11 +22,13 @@
           :community="community.slug"
           :key="post.id"
         />
+
+        <!-- disini pagination -->
         <div class="mt-4 p-2">
           <Pagination :links="posts.meta.links" />
         </div>
       </div>
-      <div class="w-4/12 p-4">
+      <div class="w-3/12 p-4">
         <div>
           <h2
             class="
